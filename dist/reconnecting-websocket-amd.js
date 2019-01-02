@@ -393,7 +393,7 @@ define(function () { 'use strict';
         };
         ReconnectingWebSocket.prototype._getNextDelay = function () {
             var _a = this._options, _b = _a.reconnectionDelayGrowFactor, reconnectionDelayGrowFactor = _b === void 0 ? DEFAULT.reconnectionDelayGrowFactor : _b, _c = _a.minReconnectionDelay, minReconnectionDelay = _c === void 0 ? DEFAULT.minReconnectionDelay : _c, _d = _a.maxReconnectionDelay, maxReconnectionDelay = _d === void 0 ? DEFAULT.maxReconnectionDelay : _d;
-            var delay = minReconnectionDelay;
+            var delay = 0;
             if (this._retryCount > 0) {
                 delay =
                     minReconnectionDelay * Math.pow(reconnectionDelayGrowFactor, this._retryCount - 1);
